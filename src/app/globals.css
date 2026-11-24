@@ -2,94 +2,93 @@
 
 @layer base {
   :root {
-    --bg-primary: #07080a;
-    --bg-secondary: #0c0e12;
-    --bg-tertiary: #12151b;
-    --bg-card: rgba(14, 17, 23, 0.7);
-    --border-subtle: rgba(255, 255, 255, 0.07);
-    --border-silver: rgba(226, 232, 240, 0.18);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
+    --bg-primary: #07111F;
+    --bg-secondary: #101C2C;
+    --bg-tertiary: #162438;
+    --bg-card: rgba(16, 28, 44, 0.75);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-accent: rgba(67, 217, 245, 0.18);
+    --text-primary: #F4F6FA;
+    --text-secondary: #AAB6C5;
     --text-muted: #64748b;
-    --accent-silver: #e2e8f0;
-    --accent-glow: rgba(226, 232, 240, 0.08);
+    --accent-cyan: #43D9F5;
+    --accent-blue: #4D8DFF;
+    --accent-purple: #A78BFA;
+    --accent-green: #39D98A;
   }
 
   html {
     scroll-behavior: smooth;
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
+    background-color: #07111F;
+    color: #F4F6FA;
     color-scheme: dark;
   }
 
   body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
+    background-color: #07111F;
+    color: #F4F6FA;
     overflow-x: hidden;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Custom scrollbar for premium aesthetic */
+  /* Custom scrollbar for deep navy aesthetic */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #07080a;
+    background: #07111F;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #1e293b;
+    background: #1e2d42;
     border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #334155;
+    background: #2c4263;
   }
 
   ::selection {
-    background: rgba(226, 232, 240, 0.2);
+    background: rgba(67, 217, 245, 0.25);
     color: #ffffff;
   }
 }
 
-/* Metallic and subtle sheen utility classes */
+/* Gradient & Glow Utility Classes */
 .text-metallic {
-  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+  background: linear-gradient(135deg, #F4F6FA 0%, #cbd5e1 50%, #94a3b8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-silver-bright {
-  background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 70%, #94a3b8 100%);
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #F4F6FA 0%, #43D9F5 60%, #4D8DFF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.border-metallic {
-  border-color: rgba(226, 232, 240, 0.12);
+.text-gradient-blue {
+  background: linear-gradient(135deg, #43D9F5 0%, #4D8DFF 50%, #A78BFA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.border-metallic-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.border-navy-subtle {
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
-.border-metallic-hover:hover {
-  border-color: rgba(226, 232, 240, 0.35);
-  box-shadow: 0 0 25px -5px rgba(226, 232, 240, 0.08);
+.border-cyan-glow:hover {
+  border-color: rgba(67, 217, 245, 0.35);
+  box-shadow: 0 0 25px -5px rgba(67, 217, 245, 0.12);
 }
 
-.hairline-grid {
-  background-size: 40px 40px;
+.hairline-grid-navy {
+  background-size: 44px 44px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-}
-
-.dot-pattern {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 24px 24px;
+    linear-gradient(to right, rgba(67, 217, 245, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(67, 217, 245, 0.035) 1px, transparent 1px);
 }

@@ -7,7 +7,6 @@ import {
   Globe,
   Smartphone,
   ArrowUpRight,
-  Sparkles,
   Users
 } from 'lucide-react';
 import { InstagramIcon } from './InstagramIcon';
@@ -16,23 +15,23 @@ export const Contact: React.FC = () => {
   const officialChannels = [
     {
       title: 'HENDERLAND CREATIONS',
-      label: 'Explore our venture and products.',
+      label: 'Explore our venture and digital products.',
       link: COMPANY.ventureUrl,
-      icon: <Globe className="w-5 h-5 text-slate-300" />,
+      icon: <Globe className="w-5 h-5 text-[#43D9F5]" />,
       tag: 'Studio Venture'
     },
     {
       title: 'GOOGLE PLAY',
       label: 'Explore our Android applications and releases.',
       link: COMPANY.playDeveloperUrl,
-      icon: <Smartphone className="w-5 h-5 text-slate-300" />,
+      icon: <Smartphone className="w-5 h-5 text-[#4D8DFF]" />,
       tag: 'Developer Profile'
     },
     {
       title: 'INSTAGRAM',
-      label: 'Follow our creative updates and digital content.',
+      label: 'Follow creative updates and digital content.',
       link: COMPANY.instagramClipsUrl,
-      icon: <InstagramIcon className="w-5 h-5 text-slate-300" />,
+      icon: <InstagramIcon className="w-5 h-5 text-[#A78BFA]" />,
       tag: '@henderlandclips'
     }
   ];
@@ -41,10 +40,10 @@ export const Contact: React.FC = () => {
     <section id="contact" className="relative py-28 px-6 sm:px-8 max-w-7xl mx-auto border-t border-white/[0.08]">
       {/* Section Subtitle */}
       <div className="flex items-center gap-3 mb-6">
-        <span className="text-[11px] font-mono tracking-[0.25em] text-slate-400 uppercase">
-          05 // Official Channels
+        <span className="text-[11px] font-mono tracking-[0.25em] text-[#43D9F5] uppercase">
+          07 // Official Channels
         </span>
-        <div className="h-[1px] w-12 bg-slate-700" />
+        <div className="h-[1px] w-12 bg-[#43D9F5]/40" />
       </div>
 
       {/* Section Heading & Narrative */}
@@ -55,7 +54,7 @@ export const Contact: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="text-3xl sm:text-5xl font-light tracking-tight text-white uppercase leading-tight"
+            className="text-3xl sm:text-5xl font-light tracking-tight text-[#F4F6FA] uppercase leading-tight"
           >
             <span className="text-metallic block">Let's</span> Connect.
           </motion.h2>
@@ -66,7 +65,7 @@ export const Contact: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="max-w-md text-xs sm:text-sm text-slate-400 font-light leading-relaxed"
+          className="max-w-md text-xs sm:text-sm text-[#AAB6C5] font-light leading-relaxed"
         >
           Have an idea, a collaboration opportunity or a question about our work? Connect with our team through our official channels.
         </motion.p>
@@ -84,56 +83,56 @@ export const Contact: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, delay: idx * 0.12 }}
-            className="group relative p-8 rounded-3xl bg-gradient-to-b from-[#0e1117] to-[#090b0e] border border-white/[0.08] hover:border-slate-300/40 transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-lg hover:shadow-[0_20px_50px_rgba(0,0,0,0.6)] cursor-pointer"
+            className="group relative p-8 rounded-3xl bg-gradient-to-b from-[#101C2C] to-[#0B1524] border border-white/[0.08] hover:border-[#43D9F5]/50 transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-xl hover:shadow-[0_20px_50px_rgba(7,17,31,0.8)] cursor-pointer"
           >
             {/* Top ambient hover line */}
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-slate-200/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#43D9F5]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <div>
               <div className="flex items-center justify-between mb-8">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.06]">
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#AAB6C5] px-3 py-1 rounded-full bg-[#07111F] border border-white/[0.08]">
                   {channel.tag}
                 </span>
-                <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/[0.07] group-hover:bg-white/[0.08] group-hover:border-white/[0.15] transition-all">
+                <div className="p-3 rounded-2xl bg-[#07111F] border border-white/[0.08] group-hover:border-[#43D9F5]/30 transition-all">
                   {channel.icon}
                 </div>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-light tracking-tight text-white uppercase group-hover:text-metallic transition-all duration-300">
+              <h3 className="text-xl sm:text-2xl font-light tracking-tight text-white uppercase group-hover:text-gradient-cyan transition-all duration-300">
                 {channel.title}
               </h3>
 
-              <p className="mt-3 text-xs sm:text-sm text-slate-400 font-light leading-relaxed">
+              <p className="mt-3 text-xs sm:text-sm text-[#AAB6C5] font-light leading-relaxed">
                 {channel.label}
               </p>
             </div>
 
-            <div className="mt-10 pt-5 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-slate-400 group-hover:text-white transition-colors">
+            <div className="mt-10 pt-5 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-[#AAB6C5] group-hover:text-white transition-colors">
               <span className="text-[11px] uppercase tracking-wider">Access Channel</span>
-              <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#AAB6C5] group-hover:text-[#43D9F5]" />
             </div>
           </motion.a>
         ))}
       </div>
 
       {/* Team Member Direct Channels */}
-      <div className="p-8 sm:p-10 rounded-3xl bg-white/[0.02] border border-white/[0.08] backdrop-blur-sm">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/[0.06]">
+      <div className="p-8 sm:p-10 rounded-3xl bg-[#101C2C]/50 border border-white/[0.08] backdrop-blur-sm">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/[0.08]">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-xl bg-white/[0.04] border border-white/[0.08] text-slate-300">
+            <div className="p-2.5 rounded-xl bg-[#07111F] border border-white/[0.08] text-[#43D9F5]">
               <Users className="w-4 h-4" />
             </div>
             <div>
               <h4 className="text-sm font-medium uppercase tracking-wider text-white">
                 Team Direct Channels
               </h4>
-              <p className="text-xs text-slate-500 font-light mt-0.5">
+              <p className="text-xs text-[#AAB6C5] font-light mt-0.5">
                 Connect directly with the individual builders behind HENDERLAND CREATIONS.
               </p>
             </div>
           </div>
 
-          <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+          <span className="text-[10px] font-mono text-[#43D9F5] uppercase tracking-widest">
             3 Verified Profiles
           </span>
         </div>
@@ -145,17 +144,17 @@ export const Contact: React.FC = () => {
               href={member.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-slate-300/30 hover:bg-white/[0.05] transition-all flex items-center justify-between group"
+              className="p-4 rounded-xl bg-[#07111F]/60 border border-white/[0.06] hover:border-[#43D9F5]/40 hover:bg-[#07111F] transition-all flex items-center justify-between group"
             >
               <div>
-                <span className="text-xs font-medium text-slate-200 block group-hover:text-white transition-colors uppercase">
+                <span className="text-xs font-medium text-[#F4F6FA] block group-hover:text-white transition-colors uppercase">
                   {member.name}
                 </span>
-                <span className="text-[11px] font-mono text-slate-500 block mt-0.5">
+                <span className="text-[11px] font-mono text-[#AAB6C5] block mt-0.5">
                   {member.handle}
                 </span>
               </div>
-              <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-[#AAB6C5] group-hover:text-[#43D9F5] transition-colors" />
             </a>
           ))}
         </div>

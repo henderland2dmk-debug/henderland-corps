@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative border-t border-white/[0.08] bg-[#050608] pt-20 pb-12 px-6 sm:px-8">
+    <footer className="relative border-t border-white/[0.08] bg-[#07111F] pt-20 pb-12 px-6 sm:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 pb-16 border-b border-white/[0.08]">
@@ -42,23 +42,23 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-5 space-y-6">
             <HCLogo size="md" showWordmark={true} />
 
-            <p className="text-sm font-light text-slate-300 max-w-sm">
+            <p className="text-sm font-light text-[#F4F6FA] max-w-sm">
               {COMPANY.tagline}
             </p>
 
-            <p className="text-xs text-slate-400 font-light leading-relaxed max-w-md">
+            <p className="text-xs text-[#AAB6C5] font-light leading-relaxed max-w-md">
               {COMPANY.positioning}
             </p>
 
-            <div className="pt-2 flex items-center gap-2 text-xs font-mono text-slate-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              <span>OFFICIAL DOMAIN: {COMPANY.domain}</span>
+            <div className="pt-2 flex items-center gap-2 text-xs font-mono text-[#AAB6C5]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#39D98A]" />
+              <span>OFFICIAL DOMAIN: <span className="text-[#43D9F5]">{COMPANY.domain}</span></span>
             </div>
           </div>
 
           {/* Navigation Links Column */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-[11px] font-mono uppercase tracking-[0.25em] text-slate-400">
+            <h4 className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#43D9F5]">
               Navigation
             </h4>
             <ul className="space-y-2.5">
@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="text-xs sm:text-sm text-slate-400 hover:text-white transition-colors duration-200"
+                    className="text-xs sm:text-sm text-[#AAB6C5] hover:text-white transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -79,15 +79,15 @@ export const Footer: React.FC = () => {
           {/* Official Channels Column */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center justify-between">
-              <h4 className="text-[11px] font-mono uppercase tracking-[0.25em] text-slate-400">
+              <h4 className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#43D9F5]">
                 Official Channels
               </h4>
               <button
                 onClick={scrollToTop}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-[10px] font-mono text-slate-400 hover:text-white hover:bg-white/[0.08] transition-all cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#101C2C] border border-white/[0.08] text-[10px] font-mono text-[#AAB6C5] hover:text-white hover:border-[#43D9F5]/40 transition-all cursor-pointer"
               >
                 <span>Top</span>
-                <ArrowUp className="w-3 h-3" />
+                <ArrowUp className="w-3 h-3 text-[#43D9F5]" />
               </button>
             </div>
 
@@ -97,13 +97,13 @@ export const Footer: React.FC = () => {
                   href={COMPANY.ventureUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs sm:text-sm text-slate-300 hover:text-white transition-colors flex items-center justify-between group p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.15]"
+                  className="text-xs sm:text-sm text-[#F4F6FA] hover:text-white transition-colors flex items-center justify-between group p-3 rounded-xl bg-[#101C2C]/60 border border-white/[0.06] hover:border-[#43D9F5]/30"
                 >
                   <div className="flex items-center gap-2.5">
-                    <Globe className="w-3.5 h-3.5 text-slate-400" />
+                    <Globe className="w-3.5 h-3.5 text-[#43D9F5]" />
                     <span>Henderland Creations</span>
                   </div>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#AAB6C5] group-hover:text-[#43D9F5] transition-colors" />
                 </a>
               </li>
 
@@ -112,13 +112,13 @@ export const Footer: React.FC = () => {
                   href={COMPANY.playDeveloperUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs sm:text-sm text-slate-300 hover:text-white transition-colors flex items-center justify-between group p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.15]"
+                  className="text-xs sm:text-sm text-[#F4F6FA] hover:text-white transition-colors flex items-center justify-between group p-3 rounded-xl bg-[#101C2C]/60 border border-white/[0.06] hover:border-[#43D9F5]/30"
                 >
                   <div className="flex items-center gap-2.5">
-                    <Smartphone className="w-3.5 h-3.5 text-slate-400" />
+                    <Smartphone className="w-3.5 h-3.5 text-[#4D8DFF]" />
                     <span>Google Play Developer Profile</span>
                   </div>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#AAB6C5] group-hover:text-[#4D8DFF] transition-colors" />
                 </a>
               </li>
 
@@ -127,13 +127,13 @@ export const Footer: React.FC = () => {
                   href={COMPANY.instagramClipsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs sm:text-sm text-slate-300 hover:text-white transition-colors flex items-center justify-between group p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.15]"
+                  className="text-xs sm:text-sm text-[#F4F6FA] hover:text-white transition-colors flex items-center justify-between group p-3 rounded-xl bg-[#101C2C]/60 border border-white/[0.06] hover:border-[#43D9F5]/30"
                 >
                   <div className="flex items-center gap-2.5">
-                    <InstagramIcon className="w-3.5 h-3.5 text-slate-400" />
+                    <InstagramIcon className="w-3.5 h-3.5 text-[#A78BFA]" />
                     <span>Henderland Clips (@henderlandclips)</span>
                   </div>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#AAB6C5] group-hover:text-[#A78BFA] transition-colors" />
                 </a>
               </li>
             </ul>
@@ -141,7 +141,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar: Copyright & Legal */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#AAB6C5]">
           <div>
             © 2026 {COMPANY.name}. All rights reserved.
           </div>
@@ -149,19 +149,19 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-6">
             <button
               onClick={() => setLegalType('privacy')}
-              className="hover:text-slate-300 transition-colors cursor-pointer"
+              className="hover:text-white transition-colors cursor-pointer"
             >
               Privacy Policy
             </button>
             <span>•</span>
             <button
               onClick={() => setLegalType('terms')}
-              className="hover:text-slate-300 transition-colors cursor-pointer"
+              className="hover:text-white transition-colors cursor-pointer"
             >
               Terms of Operation
             </button>
             <span>•</span>
-            <span>{COMPANY.domain}</span>
+            <span className="text-[#43D9F5]">{COMPANY.domain}</span>
           </div>
         </div>
       </div>

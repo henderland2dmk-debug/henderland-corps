@@ -2,93 +2,63 @@ import { Capability } from '@/types';
 
 export const CAPABILITIES: Capability[] = [
   {
-    id: 'product-architecture',
+    id: 'app-development',
     number: '01',
-    title: 'Product Architecture',
-    subtitle: 'Strategic Engineering Blueprint',
+    title: 'App Development',
+    subtitle: 'Native & Modern Mobile Systems',
     description:
-      'Translating high-conviction concepts into robust technical blueprints, data models, and scalable digital product architectures.',
-    iconName: 'Cpu',
+      'Designing and engineering performant Android applications with Kotlin, Jetpack Compose, modular architecture, and offline-first state synchronization.',
+    iconName: 'Smartphone',
     items: [
-      'Technical Feasibility & Systems Blueprinting',
-      'Data Modeling & Scalable API Design',
-      'Micro-Frontend & Serverless Infrastructures',
-      'Performance Optimization & Core Web Vitals'
+      'Native Android Development (Kotlin & Jetpack)',
+      'High-Performance UI & Intuitive Interactions',
+      'Local Storage & Offline-First Data Sync',
+      'Google Play Production Deployment & Release Lifecycle'
     ]
   },
   {
-    id: 'software-engineering',
+    id: 'digital-products',
     number: '02',
-    title: 'Software Applications',
-    subtitle: 'Full-Stack Execution & Scale',
+    title: 'Digital Products',
+    subtitle: 'End-to-End Product Engineering',
     description:
-      'Engineering mission-critical web applications with typed codebases, rigorous testing suites, and resilient fault-tolerant systems.',
-    iconName: 'Code2',
-    items: [
-      'Next.js, React & Modern TypeScript Ecosystems',
-      'Real-time Data Streaming & WebSocket Engines',
-      'State Management & Modular Architecture',
-      'Enterprise-Grade Security & Access Governance'
-    ]
-  },
-  {
-    id: 'web-development',
-    number: '03',
-    title: 'Web Development',
-    subtitle: 'Ultra-Fast Digital Platforms',
-    description:
-      'Developing bespoke web platforms that load instantaneously, look exquisite across all viewports, and elevate corporate presence.',
-    iconName: 'Globe',
-    items: [
-      'Modern Jamstack & Edge Runtimes',
-      'Fluid Responsive Layouts & High-DPI Assets',
-      'Semantic HTML5 & WCAG 2.1 AA Accessibility',
-      'Automated CI/CD & Zero-Downtime Deployment'
-    ]
-  },
-  {
-    id: 'brand-systems',
-    number: '04',
-    title: 'Design Systems & UI/UX',
-    subtitle: 'Mathematical Aesthetics & Precision',
-    description:
-      'Crafting cohesive digital brand identities, tokenized design systems, and intuitive user experiences with uncompromising craft.',
+      'Translating problem spaces into purposeful digital utilities, habit tools, and student platforms designed for real-world adoption and engagement.',
     iconName: 'Layers',
     items: [
-      'Multi-Brand Tokenized Design Systems',
-      'High-Fidelity Wireframes & Interactive Prototyping',
-      'Micro-Interactions & Hardware-Accelerated Motion',
-      'Typography Hierarchy & Editorial Spatial Design'
+      'User Journey Mapping & Ergonomic UX Design',
+      'Feature Scoping, Prototyping & Agile Sprints',
+      'Telemetry, Crash Analytics & Iterative Refinement',
+      'Sustainable Product Evolution & User Retention'
+    ]
+  },
+  {
+    id: 'web-solutions',
+    number: '03',
+    title: 'Web Solutions',
+    subtitle: 'Ultra-Fast Digital Platforms',
+    description:
+      'Building responsive corporate websites, high-speed Jamstack web apps, and modern digital hubs utilizing Next.js, TypeScript, and modern edge runtimes.',
+    iconName: 'Globe',
+    items: [
+      'Next.js (App Router) & Strict TypeScript Ecosystems',
+      'Edge-Rendered Performance & Core Web Vitals Optimization',
+      'Responsive Architectural Layouts & High-DPI Polish',
+      'Zero-Downtime Deployment & Modern Cloud Infrastructure'
     ]
   },
   {
     id: 'creative-technology',
-    number: '05',
+    number: '04',
     title: 'Creative Technology',
-    subtitle: 'Immersive Frontiers & Interaction',
+    subtitle: 'Modern Visuals & Micro-Interactions',
     description:
-      'Pioneering experiential interfaces, canvas animations, and sensory digital environments that leave indelible brand impressions.',
+      'Crafting refined digital visual identities, interactive canvas components, fluid motion physics, and sleek minimalist interfaces that leave lasting impressions.',
     iconName: 'Sparkles',
     items: [
-      'Hardware-Accelerated Canvas & WebGL Shaders',
-      'Spatial Visualizations & Kinetic Typography',
-      'Experimental UI Patterns & Generative Media',
-      'Smooth Scroll Kinetics & Physics Interactions'
-    ]
-  },
-  {
-    id: 'venture-execution',
-    number: '06',
-    title: 'Venture Incubation',
-    subtitle: 'From Concept to Self-Sustaining Reality',
-    description:
-      'Executing disciplined venture validation, agile milestone tracking, and long-term evolutionary scaling for independent studio ventures.',
-    iconName: 'ShieldCheck',
-    items: [
-      'Concept Validation & Rapid MVP Sprints',
-      'Continuous Iteration & Growth Roadmapping',
-      'IP Stewardship & Digital Asset Governance',
-      'Independent Venture Lifecycle Management'
+      'Hardware-Accelerated Motion & Framer Motion Kinetics',
+      'Mathematical Typography Hierarchy & Spatial Systems',
+      'Subtle Dark-Theme Lighting & Glassmorphic Accents',
+      'Interactive Design Systems & Tokenized Component Kits'
     ]
   }
 ];

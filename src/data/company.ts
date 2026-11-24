@@ -69,6 +69,7 @@ export const PHILOSOPHIES: Philosophy[] = [
 export const NAV_LINKS = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
+  { name: 'Structure', href: '#structure' },
   { name: 'Venture', href: '#venture' },
   { name: 'Our Work', href: '#work' },
   { name: 'Capabilities', href: '#capabilities' },

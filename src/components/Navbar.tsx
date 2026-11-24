@@ -70,7 +70,7 @@ export const Navbar: React.FC = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#07080a]/85 backdrop-blur-md border-b border-white/[0.08] py-3.5 shadow-[0_4px_30px_rgba(0,0,0,0.5)]'
+            ? 'bg-[#07111F]/85 backdrop-blur-md border-b border-white/[0.08] py-3.5 shadow-[0_4px_30px_rgba(7,17,31,0.8)]'
             : 'bg-transparent border-b border-transparent py-5'
         }`}
       >
@@ -99,14 +99,14 @@ export const Navbar: React.FC = () => {
                   className={`relative px-3.5 py-1.5 text-xs tracking-[0.16em] uppercase font-medium transition-all duration-300 rounded-full ${
                     isActive
                       ? 'text-white font-semibold'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.03]'
+                      : 'text-[#AAB6C5] hover:text-white hover:bg-white/[0.03]'
                   }`}
                 >
                   <span className="relative z-10">{link.name}</span>
                   {isActive && (
                     <motion.div
                       layoutId="activeNavIndicator"
-                      className="absolute inset-0 bg-white/[0.08] border border-white/[0.15] rounded-full shadow-[0_0_12px_rgba(255,255,255,0.06)]"
+                      className="absolute inset-0 bg-[#43D9F5]/10 border border-[#43D9F5]/30 rounded-full shadow-[0_0_12px_rgba(67,217,245,0.15)]"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -120,10 +120,10 @@ export const Navbar: React.FC = () => {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs uppercase tracking-[0.18em] font-medium text-slate-200 border border-slate-700/80 bg-slate-900/40 hover:bg-white hover:text-black hover:border-white transition-all duration-300 group shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs uppercase tracking-[0.18em] font-medium text-[#F4F6FA] border border-[#43D9F5]/30 bg-[#101C2C] hover:bg-white hover:text-[#07111F] hover:border-white transition-all duration-300 group shadow-sm"
             >
               <span>Initiate Contact</span>
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-[#43D9F5] group-hover:text-[#07111F]" />
             </a>
           </div>
 
@@ -131,7 +131,7 @@ export const Navbar: React.FC = () => {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-slate-400 hover:text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-slate-500"
+            className="md:hidden p-2 text-[#AAB6C5] hover:text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-[#43D9F5]"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -147,11 +147,11 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#07080a]/98 backdrop-blur-xl md:hidden pt-24 px-8 pb-10 flex flex-col justify-between"
+            className="fixed inset-0 z-40 bg-[#07111F]/98 backdrop-blur-xl md:hidden pt-24 px-8 pb-10 flex flex-col justify-between"
           >
             {/* Links */}
             <div className="flex flex-col space-y-4">
-              <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-slate-500 mb-2">
+              <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-[#43D9F5] mb-2">
                 Navigation // Index
               </span>
               {NAV_LINKS.map((link, idx) => {
@@ -167,11 +167,11 @@ export const Navbar: React.FC = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
                     className={`text-2xl font-light tracking-[0.08em] uppercase py-2 flex items-center justify-between border-b border-white/[0.05] ${
-                      isActive ? 'text-white font-medium pl-2 border-slate-500' : 'text-slate-400'
+                      isActive ? 'text-white font-medium pl-2 border-[#43D9F5]' : 'text-[#AAB6C5]'
                     }`}
                   >
                     <span>{link.name}</span>
-                    <span className="text-xs font-mono text-slate-600">0{idx + 1}</span>
+                    <span className="text-xs font-mono text-slate-500">0{idx + 1}</span>
                   </motion.a>
                 );
               })}
@@ -179,17 +179,17 @@ export const Navbar: React.FC = () => {
 
             {/* Mobile Footer Meta */}
             <div className="pt-8 border-t border-white/[0.08] flex flex-col gap-4">
-              <div className="flex justify-between items-center text-xs text-slate-400 font-mono">
+              <div className="flex justify-between items-center text-xs text-[#AAB6C5] font-mono">
                 <span>henderlandcorps.in</span>
-                <span className="text-emerald-400 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-[#39D98A] flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#39D98A] animate-pulse" />
                   Studio Active
                 </span>
               </div>
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, '#contact')}
-                className="w-full text-center py-3 rounded-full text-xs uppercase tracking-[0.2em] font-medium bg-slate-200 text-black hover:bg-white transition-all"
+                className="w-full text-center py-3 rounded-full text-xs uppercase tracking-[0.2em] font-medium bg-white text-[#07111F] hover:bg-[#F4F6FA] transition-all"
               >
                 Initiate Inquiry
               </a>

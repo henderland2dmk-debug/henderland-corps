@@ -14,9 +14,9 @@ export const HCLogo: React.FC<HCLogoProps> = ({
   showWordmark = true,
 }) => {
   const sizeMap = {
-    sm: { icon: 28, text: 'text-xs tracking-[0.25em]', sub: 'text-[9px]' },
-    md: { icon: 36, text: 'text-sm tracking-[0.28em]', sub: 'text-[10px]' },
-    lg: { icon: 48, text: 'text-base tracking-[0.32em]', sub: 'text-xs' },
+    sm: { icon: 30, text: 'text-xs tracking-[0.25em]', sub: 'text-[9px]' },
+    md: { icon: 38, text: 'text-sm tracking-[0.28em]', sub: 'text-[10px]' },
+    lg: { icon: 50, text: 'text-base tracking-[0.32em]', sub: 'text-xs' },
   };
 
   const currentSize = sizeMap[size];
@@ -33,16 +33,16 @@ export const HCLogo: React.FC<HCLogoProps> = ({
           xmlns="http://www.w3.org/2000/svg"
           className="transition-transform duration-500 ease-out group-hover:scale-105"
         >
-          {/* Subtle outer shield/bracket frame */}
+          {/* Subtle outer shield/bracket frame with cyan-tinted gradient */}
           <rect
             x="2"
             y="2"
             width="44"
             height="44"
-            rx="8"
-            stroke="url(#silverGradientBorder)"
+            rx="9"
+            stroke="url(#navyCyanBorder)"
             strokeWidth="1.2"
-            className="transition-colors duration-300 group-hover:stroke-slate-300"
+            className="transition-colors duration-300 group-hover:stroke-[#43D9F5]/70"
           />
 
           {/* Precision H Monogram stem 1 */}
@@ -73,7 +73,7 @@ export const HCLogo: React.FC<HCLogoProps> = ({
             y1="24"
             x2="24"
             y2="24"
-            stroke="url(#metallicGradient)"
+            stroke="url(#cyanAccentGradient)"
             strokeWidth="2.2"
             strokeLinecap="round"
           />
@@ -86,23 +86,27 @@ export const HCLogo: React.FC<HCLogoProps> = ({
             strokeLinecap="round"
           />
 
-          {/* Core Accent Dot */}
-          <circle cx="34" cy="24" r="1.5" fill="#f8fafc" />
+          {/* Core Accent Dot in Cyan */}
+          <circle cx="34" cy="24" r="1.6" fill="#43D9F5" />
 
           {/* Gradients */}
           <defs>
-            <linearGradient id="silverGradientBorder" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#ffffff" stopOpacity="0.3" />
-              <stop offset="0.5" stopColor="#94a3b8" stopOpacity="0.15" />
-              <stop offset="1" stopColor="#ffffff" stopOpacity="0.05" />
+            <linearGradient id="navyCyanBorder" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#43D9F5" stopOpacity="0.5" />
+              <stop offset="0.5" stopColor="#4D8DFF" stopOpacity="0.25" />
+              <stop offset="1" stopColor="#AAB6C5" stopOpacity="0.1" />
             </linearGradient>
             <linearGradient id="metallicGradient" x1="14" y1="12" x2="24" y2="36" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#ffffff" />
+              <stop stopColor="#F4F6FA" />
               <stop offset="0.6" stopColor="#cbd5e1" />
               <stop offset="1" stopColor="#94a3b8" />
             </linearGradient>
+            <linearGradient id="cyanAccentGradient" x1="14" y1="24" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#43D9F5" />
+              <stop offset="1" stopColor="#4D8DFF" />
+            </linearGradient>
             <linearGradient id="silverHighlightGradient" x1="18" y1="12" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#e2e8f0" />
+              <stop stopColor="#F4F6FA" />
               <stop offset="0.5" stopColor="#cbd5e1" />
               <stop offset="1" stopColor="#64748b" />
             </linearGradient>
@@ -110,17 +114,18 @@ export const HCLogo: React.FC<HCLogoProps> = ({
         </svg>
 
         {/* Ambient glow behind logo on hover */}
-        <div className="absolute inset-0 rounded-lg bg-slate-200/5 filter blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        <div className="absolute inset-0 rounded-lg bg-[#43D9F5]/10 filter blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
       </div>
 
       {/* Brand Wordmark */}
       {showWordmark && (
         <div className="flex flex-col">
-          <span className={`font-semibold text-slate-100 uppercase font-sans ${currentSize.text} tracking-[0.25em] transition-colors duration-300 group-hover:text-white`}>
+          <span className={`font-semibold text-[#F4F6FA] uppercase font-sans ${currentSize.text} tracking-[0.25em] transition-colors duration-300 group-hover:text-white`}>
             Henderland
           </span>
-          <span className={`text-slate-400 font-medium uppercase tracking-[0.35em] ${currentSize.sub}`}>
-            Corps
+          <span className={`text-[#AAB6C5] font-medium uppercase tracking-[0.35em] ${currentSize.sub} flex items-center gap-1.5`}>
+            <span>Corps</span>
+            <span className="w-1 h-1 rounded-full bg-[#43D9F5]/70" />
           </span>
         </div>
       )}

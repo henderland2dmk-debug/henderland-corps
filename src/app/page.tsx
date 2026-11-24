@@ -4,6 +4,7 @@ import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { About } from '@/components/About';
 import { Ventures } from '@/components/Ventures';
+import { Team } from '@/components/Team';
 import { Work } from '@/components/Work';
 import { Capabilities } from '@/components/Capabilities';
 import { Contact } from '@/components/Contact';
@@ -26,19 +27,22 @@ export default function HomePage() {
         {/* Section B: About Us */}
         <About />
 
-        {/* Section C: Our Venture (Centralized architecture with HENDERLAND CREATIONS spotlight) */}
+        {/* Section C: Our Venture (HENDERLAND CREATIONS spotlight & verified links) */}
         <Ventures />
 
-        {/* Section D: Our Work */}
+        {/* Section D: Team (The People Behind The Creation) */}
+        <Team />
+
+        {/* Section E: Our Work (Verified products: SASTRAcal & Henderland Creations) */}
         <Work />
 
-        {/* Section E: Capabilities */}
+        {/* Section F: Capabilities */}
         <Capabilities />
 
-        {/* Section F: Contact */}
+        {/* Section G: Contact (Official channels & direct builder links) */}
         <Contact />
 
-        {/* Section G: Executive Footer */}
+        {/* Section H: Executive Footer */}
         <Footer />
       </div>
     </main>

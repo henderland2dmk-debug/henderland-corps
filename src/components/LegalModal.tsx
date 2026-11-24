@@ -73,7 +73,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({
                     <strong>3. Data Minimization:</strong> We only collect corporate contact details, organization identifiers, and project descriptions necessary to evaluate strategic alignments and respond to business proposals.
                   </p>
                   <p>
-                    <strong>4. Inquiries & Rights:</strong> To request data rectification, disclosure, or deletion, corporate representatives may reach our security desk at {COMPANY.contactEmail}.
+                    <strong>4. Inquiries & Rights:</strong> To request data rectification, disclosure, or deletion, representatives may connect through our official channels listed on {COMPANY.domain}.
                   </p>
                 </>
               ) : (

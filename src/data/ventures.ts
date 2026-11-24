@@ -3,64 +3,34 @@ import { Venture } from '@/types';
 /**
  * CENTRALIZED VENTURE ARCHITECTURE
  * 
- * HENDERLAND CORPS operates as a venture studio.
- * As per corporate mandate, HENDERLAND CREATIONS is currently the single primary active venture.
- * To add future ventures, simply append a new Venture object to the `VENTURES` array.
- * The system automatically scales from single-venture spotlight to multi-venture grid without code changes.
+ * HENDERLAND CORPS operates with a centralized venture architecture.
+ * HENDERLAND CREATIONS is the active creative and technology-driven venture.
  */
 export const VENTURES: Venture[] = [
   {
     id: 'henderland-creations',
     name: 'HENDERLAND CREATIONS',
-    tagline: 'The creative & technology engine of HENDERLAND CORPS',
+    tagline: 'The creative and technology-driven venture of HENDERLAND CORPS.',
     status: 'Active',
     isPrimary: true,
-    foundedYear: '2024',
     description:
-      'HENDERLAND CREATIONS is the creative and technology-driven venture of HENDERLAND CORPS, focused on developing digital products, software applications, innovative solutions and creative experiences.',
+      'HENDERLAND CREATIONS is the creative and technology-driven venture of HENDERLAND CORPS, focused on developing practical Android applications, digital products and thoughtfully built technology solutions.',
     extendedDescription:
-      'Operating at the intersection of engineering rigor and design precision, HENDERLAND CREATIONS acts as the core creative powerhouse of HENDERLAND CORPS. We conceptualize, prototype, and build proprietary digital products and scalable technological solutions that transform ambitious ideas into high-impact reality.',
-    coreAreas: [
-      'Digital Product Development',
-      'Software Applications',
-      'Web Development',
-      'Technology Solutions',
-      'Creative Projects',
-      'Product Innovation',
+      'Operating as the dedicated engineering and creative studio of HENDERLAND CORPS, HENDERLAND CREATIONS builds practical mobile applications, modern digital products, and thoughtful software experiences designed for direct real-world utility.',
+    focusAreas: [
+      'Android Application Development',
+      'Digital Products',
+      'Practical Software Solutions',
+      'Creative Technology'
     ],
-    disciplines: [
-      {
-        title: 'Digital Product Development',
-        description: 'End-to-end product design, user research, rapid prototyping, and high-velocity iteration.'
-      },
-      {
-        title: 'Software Applications',
-        description: 'Robust, secure, and performant web & multi-platform software solutions.'
-      },
-      {
-        title: 'Web Development',
-        description: 'Bespoke web architectures, modern interactive web platforms, and lightning-fast digital environments.'
-      },
-      {
-        title: 'Technology Solutions',
-        description: 'Scalable system architecture, cloud integration, API design, and automation pipelines.'
-      },
-      {
-        title: 'Creative Projects',
-        description: 'Multidisciplinary creative direction, digital brand systems, and engaging interactive experiences.'
-      },
-      {
-        title: 'Product Innovation',
-        description: 'R&D on emerging technologies, experimental interfaces, and transformative business models.'
-      }
-    ],
+    externalUrl: 'https://ncrafts.cc/henderland-creations/',
+    playStoreUrl: 'https://play.google.com/store/apps/developer?hl=en_IN&id=Henderland+Creations',
     stats: [
-      { label: 'Studio Focus', value: 'Creative & Tech' },
-      { label: 'Execution Model', value: 'End-to-End' },
-      { label: 'Architecture', value: 'Scalable' },
-      { label: 'Status', value: 'Active Venture' }
-    ],
-    accentColor: 'silver'
+      { label: 'Studio Venture', value: 'Henderland Creations' },
+      { label: 'Core Platform', value: 'Android & Web' },
+      { label: 'Active Product', value: 'SASTRAcal' },
+      { label: 'Venture Status', value: 'Active' }
+    ]
   }
 ];
 

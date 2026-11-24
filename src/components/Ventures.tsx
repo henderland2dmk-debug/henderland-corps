@@ -6,14 +6,10 @@ import { getAllVentures, getPrimaryVenture } from '@/data/ventures';
 import { Venture } from '@/types';
 import { VentureModal } from './VentureModal';
 import {
-  Layers,
   ArrowUpRight,
   ShieldCheck,
-  Cpu,
-  Globe,
-  Sparkles,
-  Terminal,
-  Compass,
+  Smartphone,
+  ExternalLink,
   Check,
   ChevronRight
 } from 'lucide-react';
@@ -51,13 +47,12 @@ export const Ventures: React.FC = () => {
         </div>
 
         <div className="max-w-md text-xs sm:text-sm text-slate-400 font-light leading-relaxed">
-          Centralized venture portfolio architecture. Operating with dedicated focus to incubate and scale high-value technological and creative engines.
+          Operating with focused execution to develop practical Android applications, digital products and thoughtfully built technology solutions.
         </div>
       </div>
 
-      {/* Featured Single Venture Showcase (Scalable to Multi-Venture Grid) */}
+      {/* Featured Primary Venture Showcase */}
       {ventures.length === 1 ? (
-        /* Primary Flagship Spotlight for HENDERLAND CREATIONS */
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,7 +60,7 @@ export const Ventures: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="relative rounded-3xl bg-gradient-to-b from-[#0f1218]/90 via-[#0a0c10]/95 to-[#07080a] border border-white/[0.12] p-8 sm:p-12 lg:p-16 overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.6)]"
         >
-          {/* Subtle Ambient Glow behind card */}
+          {/* Subtle Ambient Glow */}
           <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-slate-300/[0.04] filter blur-3xl pointer-events-none" />
           <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-slate-500/[0.03] filter blur-3xl pointer-events-none" />
 
@@ -76,13 +71,10 @@ export const Ventures: React.FC = () => {
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 <span>Primary Venture // {primaryVenture.status}</span>
               </div>
-              <span className="text-xs font-mono text-slate-500 hidden sm:inline">
-                Est. {primaryVenture.foundedYear}
-              </span>
             </div>
 
             <div className="text-[11px] font-mono tracking-[0.2em] text-slate-400 uppercase">
-              Venture ID: HC-01
+              Venture: Henderland Creations
             </div>
           </div>
 
@@ -101,39 +93,58 @@ export const Ventures: React.FC = () => {
                 {primaryVenture.description}
               </p>
 
-              {/* Action Button */}
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              {/* Action Buttons: Verified Links & Dossier */}
+              <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+                {primaryVenture.playStoreUrl && (
+                  <a
+                    href={primaryVenture.playStoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-white text-black font-medium text-xs tracking-[0.16em] uppercase hover:bg-slate-200 transition-all duration-300 group shadow-lg cursor-pointer"
+                  >
+                    <Smartphone className="w-4 h-4 text-black" />
+                    <span>Google Play Profile</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+                )}
+
+                {primaryVenture.externalUrl && (
+                  <a
+                    href={primaryVenture.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-white/[0.04] text-slate-200 border border-white/[0.12] hover:bg-white/[0.08] hover:border-slate-300 font-medium text-xs tracking-[0.16em] uppercase transition-all duration-300 group cursor-pointer"
+                  >
+                    <span>Reference Site</span>
+                    <ExternalLink className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                  </a>
+                )}
+
                 <button
                   onClick={() => handleOpenModal(primaryVenture)}
-                  className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-white text-black font-medium text-xs tracking-[0.2em] uppercase hover:bg-slate-200 transition-all duration-300 group cursor-pointer shadow-lg"
+                  className="px-5 py-3.5 text-xs font-mono uppercase tracking-[0.16em] text-slate-400 hover:text-white transition-colors cursor-pointer"
                 >
-                  <span>Explore Venture Blueprint</span>
-                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  View Details →
                 </button>
-
-                <div className="text-xs font-mono text-slate-500 px-3 py-1.5">
-                  Full Technical Dossier Available
-                </div>
               </div>
             </div>
 
-            {/* Core Disciplines & Focus Areas */}
+            {/* Core Development Areas */}
             <div className="lg:col-span-5 bg-white/[0.02] border border-white/[0.07] rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
               <div className="flex items-center justify-between mb-6 pb-3 border-b border-white/[0.06]">
-                <span className="text-xs font-mono uppercase tracking-[0.2em] text-slate-400 flex items-center gap-2">
-                  <Cpu className="w-4 h-4 text-slate-300" />
-                  Core Areas
+                <span className="text-xs font-mono uppercase tracking-[0.2em] text-slate-400">
+                  Focus Areas
                 </span>
                 <span className="text-[10px] font-mono text-slate-500 uppercase">
-                  6 Disciplines
+                  4 Disciplines
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 gap-2.5">
-                {primaryVenture.coreAreas.map((area, idx) => (
+              <div className="grid grid-cols-1 gap-3">
+                {primaryVenture.focusAreas.map((area, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center justify-between p-2.5 rounded-lg bg-white/[0.02] border border-white/[0.04] text-xs text-slate-300 font-light hover:bg-white/[0.05] hover:text-white transition-colors"
+                    className="flex items-center justify-between p-3 rounded-lg bg-white/[0.02] border border-white/[0.04] text-xs text-slate-300 font-light hover:bg-white/[0.05] hover:text-white transition-colors"
                   >
                     <div className="flex items-center gap-2.5">
                       <span className="text-[10px] font-mono text-slate-500">
@@ -165,7 +176,6 @@ export const Ventures: React.FC = () => {
           )}
         </motion.div>
       ) : (
-        /* Multi-Venture Grid (Engineered for automatic future expansion) */
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {ventures.map((venture, idx) => (
             <motion.div
@@ -177,14 +187,10 @@ export const Ventures: React.FC = () => {
               className="p-8 rounded-3xl bg-[#0d0f14] border border-white/[0.1] hover:border-slate-400/50 transition-all flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono uppercase tracking-widest text-slate-400">
-                    {venture.status}
-                  </span>
-                  <span className="text-xs font-mono text-slate-500">Est. {venture.foundedYear}</span>
-                </div>
-
-                <h3 className="text-2xl font-light text-white uppercase">{venture.name}</h3>
+                <span className="text-xs font-mono uppercase tracking-widest text-slate-400">
+                  {venture.status}
+                </span>
+                <h3 className="text-2xl font-light text-white uppercase mt-2">{venture.name}</h3>
                 <p className="text-xs text-slate-400 mt-1">{venture.tagline}</p>
                 <p className="text-sm text-slate-300 mt-4 leading-relaxed font-light">{venture.description}</p>
               </div>
@@ -192,7 +198,7 @@ export const Ventures: React.FC = () => {
               <div className="mt-8 pt-4 border-t border-white/[0.06] flex items-center justify-between">
                 <button
                   onClick={() => handleOpenModal(venture)}
-                  className="text-xs font-mono uppercase tracking-wider text-slate-200 hover:text-white flex items-center gap-2"
+                  className="text-xs font-mono uppercase tracking-wider text-slate-200 hover:text-white flex items-center gap-2 cursor-pointer"
                 >
                   <span>Explore Venture</span>
                   <ChevronRight className="w-4 h-4" />
@@ -202,17 +208,6 @@ export const Ventures: React.FC = () => {
           ))}
         </div>
       )}
-
-      {/* Centralized Venture Architecture Note (Communicates technical excellence to investors/partners) */}
-      <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono text-slate-500 border border-white/[0.05] p-4 rounded-xl bg-white/[0.01]">
-        <div className="flex items-center gap-2">
-          <ShieldCheck className="w-4 h-4 text-slate-400" />
-          <span>Venture Architecture // Modular Centralized Schema</span>
-        </div>
-        <div>
-          <span>henderlandcorps.in/ventures</span>
-        </div>
-      </div>
 
       {/* Interactive Venture Modal */}
       <VentureModal

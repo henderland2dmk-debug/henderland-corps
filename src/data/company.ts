@@ -1,4 +1,4 @@
-import { Philosophy } from '@/types';
+import { Philosophy, TeamMember } from '@/types';
 
 export const COMPANY = {
   name: 'HENDERLAND CORPS',
@@ -17,12 +17,33 @@ export const COMPANY = {
     'We believe meaningful ideas deserve to become reality. Through technology, product development and creative exploration, we aim to transform concepts into solutions that create lasting value.',
     'Our approach combines independent thinking, technical capabilities and an entrepreneurial mindset.'
   ],
-  contactEmail: 'contact@henderlandcorps.in',
-  inquiriesEmail: 'inquiries@henderlandcorps.in',
-  location: 'Venture Studio // Bangalore & Chennai, India',
-  established: '2024',
-  coordinates: '13.0827° N, 80.2707° E'
+  // Verified Official Channels & Links
+  ventureName: 'HENDERLAND CREATIONS',
+  ventureUrl: 'https://ncrafts.cc/henderland-creations/',
+  playDeveloperUrl: 'https://play.google.com/store/apps/developer?hl=en_IN&id=Henderland+Creations',
+  instagramClipsUrl: 'https://www.instagram.com/henderlandclips/',
 };
+
+export const TEAM_MEMBERS: TeamMember[] = [
+  {
+    name: 'Ganesh D',
+    handle: '@h.d.ganesh',
+    instagramUrl: 'https://www.instagram.com/h.d.ganesh/',
+    initials: 'GD'
+  },
+  {
+    name: 'Durga Muthu Kumar',
+    handle: '@ig._mdmk',
+    instagramUrl: 'https://www.instagram.com/ig._mdmk/',
+    initials: 'DMK'
+  },
+  {
+    name: 'Nishanth A',
+    handle: '@nishanth_pro_official',
+    instagramUrl: 'https://www.instagram.com/nishanth_pro_official/',
+    initials: 'NA'
+  }
+];
 
 export const PHILOSOPHIES: Philosophy[] = [
   {

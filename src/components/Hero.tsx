@@ -38,7 +38,7 @@ export const Hero: React.FC = () => {
         >
           <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.09] text-[11px] font-mono tracking-[0.2em] uppercase text-slate-300">
             <span className="w-1.5 h-1.5 rounded-full bg-slate-300 animate-pulse" />
-            <span>VENTURE STUDIO // EST. {COMPANY.established}</span>
+            <span>VENTURE STUDIO // INDEPENDENT VENTURES</span>
           </div>
 
           <div className="hidden sm:flex items-center gap-6 text-[11px] font-mono tracking-[0.18em] text-slate-500 uppercase">
@@ -144,9 +144,9 @@ export const Hero: React.FC = () => {
         </div>
 
         <div className="flex flex-col">
-          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500">Headquarters</span>
+          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500">Official Domain</span>
           <span className="text-xs sm:text-sm text-slate-200 font-medium mt-1 font-mono text-[11px] sm:text-xs">
-            {COMPANY.coordinates}
+            {COMPANY.domain}
           </span>
         </div>
       </motion.div>

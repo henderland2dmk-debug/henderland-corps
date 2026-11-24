@@ -3,7 +3,7 @@
 import React from 'react';
 import { Project } from '@/types';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, CheckCircle, ExternalLink, Code2, Layers, Calendar, Activity } from 'lucide-react';
+import { X, CheckCircle, ExternalLink, ArrowUpRight } from 'lucide-react';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -42,7 +42,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-6 right-6 p-2 rounded-full bg-white/[0.05] border border-white/[0.1] text-slate-400 hover:text-white hover:bg-white/[0.1] transition-all"
+              className="absolute top-6 right-6 p-2 rounded-full bg-white/[0.05] border border-white/[0.1] text-slate-400 hover:text-white hover:bg-white/[0.1] transition-all cursor-pointer"
               aria-label="Close project modal"
             >
               <X className="w-5 h-5" />
@@ -56,9 +56,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-400 flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/30 border border-emerald-800/30">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 {project.status}
-              </span>
-              <span className="text-xs font-mono text-slate-500">
-                {project.year}
               </span>
             </div>
 
@@ -75,68 +72,48 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             {/* In-depth Narrative */}
             <div className="space-y-4">
               <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-slate-400">
-                Project Overview & Architecture
+                Project Overview
               </h4>
               <p className="text-sm sm:text-base text-slate-300 font-light leading-relaxed">
-                {project.longDescription || project.description}
+                {project.description}
               </p>
             </div>
 
-            {/* Deliverables */}
-            <div className="mt-6">
-              <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-slate-400 mb-3">
-                Key Deliverables & Specifications
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                {project.deliverables.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-2.5 p-3 rounded-lg bg-white/[0.02] border border-white/[0.05] text-xs text-slate-300"
-                  >
-                    <CheckCircle className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Technologies */}
-            <div className="mt-6">
-              <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-slate-400 mb-3">
-                Core Technology Stack
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, idx) => (
-                  <span
-                    key={idx}
-                    className="px-3 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-slate-300"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Performance Metric Badge */}
-            {project.metrics && (
-              <div className="mt-6 p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] flex items-center justify-between">
-                <span className="text-xs font-mono text-slate-500 uppercase">
-                  Studio Benchmark / Metric
-                </span>
-                <span className="text-xs font-mono font-medium text-slate-200">
-                  {project.metrics}
-                </span>
+            {/* Key Features */}
+            {project.features && project.features.length > 0 && (
+              <div className="mt-6">
+                <h4 className="text-xs font-mono uppercase tracking-[0.2em] text-slate-400 mb-3">
+                  Key Features & Capabilities
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {project.features.map((feature, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-2.5 p-3 rounded-lg bg-white/[0.02] border border-white/[0.05] text-xs text-slate-300"
+                    >
+                      <CheckCircle className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
-            {/* Footer */}
-            <div className="mt-8 pt-6 border-t border-white/[0.08] flex items-center justify-between">
-              <span className="text-[11px] font-mono text-slate-500">
-                Venture: HENDERLAND CREATIONS
-              </span>
+            {/* Actions & Official Link */}
+            <div className="mt-8 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
+              <a
+                href={project.externalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-xs font-medium uppercase tracking-[0.16em] bg-white text-black hover:bg-slate-200 transition-colors cursor-pointer"
+              >
+                <span>{project.actionLabel}</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+
               <button
                 onClick={onClose}
-                className="px-5 py-2 rounded-full text-xs font-mono uppercase tracking-wider text-slate-300 bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] transition-all"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-white bg-transparent border border-white/[0.08] transition-all cursor-pointer"
               >
                 Close View
               </button>

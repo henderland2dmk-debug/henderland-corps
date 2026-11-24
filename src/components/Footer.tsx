@@ -3,13 +3,12 @@
 import React, { useState } from 'react';
 import { HCLogo } from './HCLogo';
 import { COMPANY, NAV_LINKS } from '@/data/company';
-import { getAllVentures } from '@/data/ventures';
 import { LegalModal } from './LegalModal';
-import { ArrowUp, ArrowUpRight, Globe, Shield, Mail } from 'lucide-react';
+import { ArrowUp, ArrowUpRight, Globe, Smartphone } from 'lucide-react';
+import { InstagramIcon } from './InstagramIcon';
 
 export const Footer: React.FC = () => {
   const [legalType, setLegalType] = useState<'privacy' | 'terms' | null>(null);
-  const ventures = getAllVentures();
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -36,7 +35,6 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="relative border-t border-white/[0.08] bg-[#050608] pt-20 pb-12 px-6 sm:px-8">
-      {/* Top ambient glow */}
       <div className="max-w-7xl mx-auto">
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 pb-16 border-b border-white/[0.08]">
@@ -52,8 +50,8 @@ export const Footer: React.FC = () => {
               {COMPANY.positioning}
             </p>
 
-            <div className="pt-2 flex items-center gap-2 text-xs font-mono text-slate-500">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="pt-2 flex items-center gap-2 text-xs font-mono text-slate-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               <span>OFFICIAL DOMAIN: {COMPANY.domain}</span>
             </div>
           </div>
@@ -78,62 +76,67 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Ventures Column */}
-          <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-[11px] font-mono uppercase tracking-[0.25em] text-slate-400">
-              Ventures
-            </h4>
-            <ul className="space-y-2.5">
-              {ventures.map((v) => (
-                <li key={v.id}>
-                  <a
-                    href="#venture"
-                    onClick={(e) => handleNavClick(e, '#venture')}
-                    className="text-xs sm:text-sm text-slate-300 hover:text-white transition-colors duration-200 flex items-center gap-1.5"
-                  >
-                    <span>{v.name}</span>
-                    <ArrowUpRight className="w-3 h-3 text-slate-500" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            <div className="pt-4">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500 block mb-1">
-                Centralized Studio
-              </span>
-              <span className="text-xs text-slate-400">
-                Independent Structure
-              </span>
-            </div>
-          </div>
-
-          {/* Inquiries & Direct Desk */}
-          <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-[11px] font-mono uppercase tracking-[0.25em] text-slate-400">
-              Corporate Desk
-            </h4>
-            <div className="space-y-2 text-xs font-mono text-slate-400">
-              <a
-                href={`mailto:${COMPANY.contactEmail}`}
-                className="hover:text-white transition-colors block"
-              >
-                {COMPANY.contactEmail}
-              </a>
-              <p className="text-slate-500 text-[11px] font-sans">
-                {COMPANY.location}
-              </p>
-            </div>
-
-            <div className="pt-4">
+          {/* Official Channels Column */}
+          <div className="lg:col-span-4 space-y-4">
+            <div className="flex items-center justify-between">
+              <h4 className="text-[11px] font-mono uppercase tracking-[0.25em] text-slate-400">
+                Official Channels
+              </h4>
               <button
                 onClick={scrollToTop}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-slate-300 hover:text-white hover:bg-white/[0.08] transition-all cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-[10px] font-mono text-slate-400 hover:text-white hover:bg-white/[0.08] transition-all cursor-pointer"
               >
-                <span>Back to Top</span>
-                <ArrowUp className="w-3.5 h-3.5" />
+                <span>Top</span>
+                <ArrowUp className="w-3 h-3" />
               </button>
             </div>
+
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href={COMPANY.ventureUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs sm:text-sm text-slate-300 hover:text-white transition-colors flex items-center justify-between group p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.15]"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <Globe className="w-3.5 h-3.5 text-slate-400" />
+                    <span>Henderland Creations</span>
+                  </div>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors" />
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href={COMPANY.playDeveloperUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs sm:text-sm text-slate-300 hover:text-white transition-colors flex items-center justify-between group p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.15]"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <Smartphone className="w-3.5 h-3.5 text-slate-400" />
+                    <span>Google Play Developer Profile</span>
+                  </div>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors" />
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href={COMPANY.instagramClipsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs sm:text-sm text-slate-300 hover:text-white transition-colors flex items-center justify-between group p-2.5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-white/[0.15]"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <InstagramIcon className="w-3.5 h-3.5 text-slate-400" />
+                    <span>Henderland Clips (@henderlandclips)</span>
+                  </div>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors" />
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -158,7 +161,7 @@ export const Footer: React.FC = () => {
               Terms of Operation
             </button>
             <span>•</span>
-            <span>henderlandcorps.in</span>
+            <span>{COMPANY.domain}</span>
           </div>
         </div>
       </div>
